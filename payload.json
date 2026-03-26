@@ -1,0 +1,107 @@
+{
+  "text": "Your Daily Decision Debrief - Wednesday, Mar 25",
+  "blocks": [
+    {
+      "type": "header",
+      "text": {
+        "type": "plain_text",
+        "text": "Your Daily Decision Debrief - Wednesday, Mar 25",
+        "emoji": true
+      }
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "Hey Manan! You crushed it today - two big strategic sessions down and some *critical* decisions locked. Here's your full debrief so you can walk into your OOO tomorrow with complete clarity."
+      }
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*Meeting 1 of 2 - TLWA Hiring Alignment* (12:30 PM)\n_With: Fadi, Dana, Matan, Cindy, Jatin, Ray, Jeff, Bob_"
+      }
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*Decisions Made:*\n\n:white_check_mark: *Option C prototype confirmed* - 4-step QR activation flow: Scan → pre-activation reveal → activate → next steps with wall placement\n_Why: Team validated the full story sequence - \"Your hiring toolkit is ready\" → careers page preview → AI screener demo → 3 setup options. Clean, narrative-driven, conversion-optimized._\n\n:white_check_mark: *Phone/SMS auth over email* - authentication must happen early in the flow\n_Why: Prevents QR code hijacking and ensures the right business owner is tied to each code. Printer can match QR codes to addresses for a few extra pennies._\n\n:white_check_mark: *Generic \"Team Member\" job post as default* - 2032 expiration, auto-scheduling off, flagged in DB\n_Why: Eliminates the empty-state problem. No excuse not to display the sticker if there's always a live role ready to go._\n\n:white_check_mark: *Build outside HB1* for speed + Fadi code contribution\n_Why: 6-week window with a preference for 3-4 week delivery. Speed over architectural purity right now._\n\n:white_check_mark: *Unique QR codes per location* (50k total), URL: app.jhb.com/tlwa/[unique-string]\n_Why: Location-level tracking routing to company-level careers pages. Ray + Jatin own setup._\n\n:white_check_mark: *Top Local Workplace badge* - DB flag for 2026 TLW winners, Kvan owns PM\n_Why: Easy brand lift, asset files already exist from Dan's work._"
+      }
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*:red_circle: Action Items - TLWA Alignment:*\n\n• *Manan + Fadi* - Define smart defaults (photos, logo, brand color, generic job post) - *URGENT, blocks Friday printer deadline*\n• *Ray + Jatin* - URL routing + QR code structure - *DUE FRIDAY*\n• *Fadi* - Marketing meeting for insert content strategy\n• *Ray + Matan* - Lifecycle marketing + Salesforce integration planning\n• *Manan* - Confirm Indeed integration email response"
+      }
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*Meeting 2 of 2 - Smart PreSets: Careers Page* (1:45 PM)\n_With: Fadi, Jeff_"
+      }
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*Decisions Made:*\n\n:white_check_mark: *4-tier smart preset framework locked*\n• Tier 1: Zero business info (baseline)\n• Tier 2: High-level category (food & bev, health/fitness)\n• Tier 3: Specific type (Mexican restaurant, spa)\n• Tier 4: Full scraping (logos, colors, descriptions, images)\n_Why: Most OEMs land in Tiers 3-4 for launch week. Tier 4 is ideal but complex - this gives you a graceful degradation path._\n\n:white_check_mark: *Logo as the highest-ROI personalization element for MVP*\n_Why: Jeff's framing won - logos are less risky than photos (wrong images get stronger negative reactions per Fadi) but more impressive than text. Company color + logo = \"this is MY careers page\" without the scraping risk._\n\n:white_check_mark: *Smart placeholder UX* - dotted-line placeholders invite editing (Dropbox avatar pattern)\n_Why: Primary goal is driving editing behavior to showcase customization potential, not just displaying content. Activation through editing desire._\n\n:white_check_mark: *Manan building logo scraping tool with Claude ranking system* (scoring against 3k-company prospect list)\n_Why: Sales team enablement + future in-product use. Needs Supabase integration - currently local only._"
+      }
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*:red_circle: Action Items - Smart PreSets:*\n\n• *Manan + Jeff* - Define preset specs for each tier (Tiers 1-4)\n• *Fadi* - Design post-QR scan UX flow\n• *Manan* - Integrate logo scraping tool with Supabase (currently local only)\n• *All* - Friday user testing: in-person QR prototype validation with multiple versions; include Dana + Ray"
+      }
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*:rotating_light: Overdue / Still On Your Plate:*\n\n• *Applicant flow brief + prototype* - was due EOD today. Did this get to Ray before you signed off?\n• *\"Manan Boost\" SKU kick-off with Chris* - billing needs 3-wk lead for Early May. Most time-sensitive thing on the board.\n• *Manual Mode green light* - Cindy's QA is done, ball is in your court\n• *Andrew 3LO spike review + email Kenneth + add Ray* - still pending\n• *Hackathon brief docs* (all 4 projects) - kick-off is Monday Mar 30"
+      }
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*:calendar: What's Coming Up:*\n\n• *Tomorrow (Thu Mar 26)* - You're OOO! Rest up and recharge.\n• *Friday Mar 27* - All-hands + Malcolm's 2,500 one-click jobs milestone celebration! Ray presenting target segment slide.\n• *Friday (hard deadline)* - QR code URLs + printer specs must be locked.\n• *Monday Mar 30* - Hackathon kick-off! Full team on applicant flow."
+      }
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*:trophy: Today's Win:*\nYou aligned a 10-person cross-functional team on a complex physical + digital product in one session and got Option C locked. That's genuinely hard to do. The 4-tier smart preset framework is also sharp product thinking - it gives the team a clear build path with graceful degradation built in. Great day. Now go enjoy your OOO - you earned it. :raised_hands:"
+      }
+    },
+    {
+      "type": "context",
+      "elements": [
+        {
+          "type": "mrkdwn",
+          "text": "Prepared by your Chief of Staff automation · Homebase PM Daily Debrief · Mar 25, 2026"
+        }
+      ]
+    }
+  ]
+}
