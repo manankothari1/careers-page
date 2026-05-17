@@ -1,0 +1,34 @@
+{
+  "date": "Thursday, May 14, 2026",
+  "opening": "Hey Manan! Your Chief of Staff here with your end-of-week power recap. *You had a HUGE day on Thursday* — four meetings, one massive strategic pivot, and a ton of clarity coming out of it. Here's everything you need to know:",
+  "meetings": [
+    "8:45 AM — Hiring Leads Standup (Fadi, Dana, Matan, Cindy, Jatin, Ray, Nelson, Jeff, Usman)",
+    "9:58 AM — Tanner / Manan: 3LO (Indeed OAuth) Testing",
+    "10:15 AM — Cindy / Manan: Sprint 2611 Planning",
+    "4:00 PM — Ray / Manan: Indeed Sponsored Jobs API Deep Dive"
+  ],
+  "decisions": [
+    "*Sponsored Jobs API may be descoped entirely* — You surfaced a critical ROI problem: Homebase earns $0 from the Indeed partnership despite 3+ months of engineering effort. Decision pending, but the momentum is toward descoping.",
+    "*Indeed API strategy if kept: build a POC outside HB1* — Rather than tangling with HB1 complexity, you and Ray aligned on building a proof-of-concept on Vercel/separate service first to validate the API. Embedded API integration is expected to drive 10x more usage than redirect-only.",
+    "*Boost modal design direction confirmed* — Three tiers (Homebase recommended, ZipRecruiter, Indeed). First-time users get a free Homebase boost trigger after job approval. Cindy is owning designs.",
+    "*Smart suggestions scoped conservatively* — Start with title + salary suggestions using scheduling team patterns. Character count and grammar as next layer. No over-engineering.",
+    "*3LO architecture bug acknowledged* — If a user authenticates after the 12-hour job posting window, jobs won't sync. Proposed fix: check company 3LO status first, then trigger the worker based on auth timing. Evaluate before committing to the change.",
+    "*Rami starting Friday (May 15)* — He'll be working on applicant flow and job matching. Good timing with 2611 kicking off."
+  ],
+  "action_items": [
+    "URGENT by Tuesday AM: Cindy delivers boost modal designs for the Wednesday 2611 look-ahead — *track this*",
+    "Finalize the Sponsored Jobs API scope decision — this is your biggest open question going into next week",
+    "Discuss Indeed API implementation approach with Jatin",
+    "Research competitor boost UI implementations (Greenhouse, Ashby) for UI flexibility benchmarks",
+    "Clarify UI flexibility requirements with Gustavo",
+    "Complete Indeed documentation analysis (was due EOD May 14 — check if done)",
+    "Tag Matan for copy review on boost modal messaging (focus: 'best value' + 'up to 4x more applicants')",
+    "Nail down Toronto visit timing — week of June 2nd is complicated (Cindy in Ottawa, Ray also visiting that week)"
+  ],
+  "themes": [
+    "*Sponsored Jobs API ROI crisis* — Three of your four meetings touched on this. The core tension: it has strategic upside (10x usage, agent-driven sponsorship, bundling potential) but generates $0 for Homebase today. This decision will shape your Q2 roadmap significantly.",
+    "*Sprint 2611 is tight* — Designs needed by Tuesday, look-ahead Wednesday. Rami is ramping. Make sure everyone has clarity on scope before the week starts.",
+    "*3LO/OAuth reliability* — Known bug in the 12-hour sync window needs resolution before the Indeed integration can be considered production-ready."
+  ],
+  "closing": "_You navigated a ton of complexity this week, Manan — from deep technical OAuth architecture questions to big strategic pivots on monetization. The fact that you caught the $0 revenue issue early is exactly the kind of sharp PM thinking that saves months of wasted effort. Enjoy your weekend — you earned it!_ \n\nSee you Monday. 💪"
+}
