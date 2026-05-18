@@ -1,0 +1,90 @@
+{
+  "channel": "D06E4QMHCNN",
+  "text": "Your Daily Debrief — Thursday, May 14, 2026 (most recent business day)",
+  "blocks": [
+    {
+      "type": "header",
+      "text": {
+        "type": "plain_text",
+        "text": "Your Daily Debrief — Thursday, May 14, 2026"
+      }
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "Hey Manan! Your chief of staff here. No new meetings recorded today (Monday May 18) — so here's your comprehensive debrief from your last full workday, *Thursday May 14*. Big week ahead, let's get you dialed in. :muscle:"
+      }
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*Meetings reviewed (May 14):*  Hiring Leads Standup  •  Tanner / Manan 3LO Testing  •  Cindy / Manan 2611  •  Ray / Manan Indeed Sponsored Jobs API"
+      }
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*:busts_in_silhouette: Hiring Leads Standup* _(8:45am — Full leads team)_\nFull team standup. Notes weren't captured in Granola this session."
+      }
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*:test_tube: Tanner / Manan — 3LO Testing* _(9:58am)_\n*Decisions made:*\n• Reused existing office coordinator job for 3LO testing — real applicants OK\n• Identified 12-hour window architecture bug: worker runs based on job posting time, not auth time — so late authenticators miss the sync window\n• Proposed fix: check 3LO auth status first, then trigger worker based on auth timing\n\n*Action items:*\n• *Tanner:* Fix recruiter display issue (was due same day)\n• *Tanner:* Monitor via DataDog + Sentry for errors\n• *You + Tanner:* Reconnect to review test results\n• *Hold:* Don't commit to architecture changes until API functionality confirmed"
+      }
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*:boom: Cindy / Manan — 2611 Scope* _(10:15am)_\n*Key decisions:*\n• :rotating_light: *Sponsored Jobs API may be fully descoped* — Homebase earns $0 from Indeed despite 3+ months of engineering work. ROI doesn't pencil.\n• Boost modal replaces current job creation flow: 3 options (Homebase recommended, ZipRecruiter, Indeed)\n• Free Homebase boost triggered when user returns to dashboard after first job approval\n• Rami started May 15 on applicant flow + job matching\n• Smart suggestions scoped to title + salary first; grammar/character count is a future layer\n\n*Action items:*\n• *Cindy:* Designs due *Tuesday morning* (May 19) for 2611 look-ahead Wednesday\n• *Cindy + Matan:* Copy workshop on boost modal — \"best value\" messaging + \"up to 4x more applicants\"\n• *You:* Make the call on sponsored jobs API scope :red_circle:\n• *You:* Sort out Toronto visit — week of June 2nd is messy (Cindy in Ottawa, Ray visiting same week)"
+      }
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*:briefcase: Ray / Manan — Indeed Sponsored Jobs API Deep Dive* _(4:00pm)_\n*Key decisions:*\n• Full API integration > redirect-only (10x higher expected usage when embedded vs. external flow)\n• Build POC *outside HB1* (Vercel/separate service) to avoid HB1 context-switching delays\n• Timeline: 1–3 months — bottleneck is Indeed coordination overhead, not technical complexity\n• Long-term vision: Homebase Assistant handles ad sponsorship via chat\n\n*Action items:*\n• *You:* Discuss implementation approach with Jatin\n• *You:* Research competitor UIs — Greenhouse + Ashby are the benchmarks\n• *You:* Clarify UI flexibility requirements with Gustavo\n• *You:* Complete Indeed API documentation analysis (was due EOD May 14 :warning:)\n• *Consider:* Adopting Notion for better doc collab + agent integration"
+      }
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*:mega: The Big Picture — Heading Into This Week*\n\nThe #1 decision hanging over everything: *Sponsored Jobs API — in or out?*\n\nYou got two very different takes on May 14:\n• *Cindy:* Homebase earns $0 from Indeed. Massive eng lift with no revenue upside. Descope it.\n• *Ray:* Full integration drives 10x more usage and unlocks agent-driven sponsorship. Build the POC.\n\nThis unblocks your sprint and eng team. The sooner you call it, the faster everything else moves."
+      }
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*:white_check_mark: Your Personal Action List This Week:*\n1. :red_circle: *Decide:* Sponsored Jobs API scope (most urgent — unblocks eng)\n2. :phone: Sync with Jatin on 3LO implementation approach\n3. :mag: Research Greenhouse + Ashby competitor UIs\n4. :speech_balloon: Clarify UI flexibility requirements with Gustavo\n5. :page_facing_up: Complete Indeed documentation analysis (overdue from May 14)\n6. :calendar: Confirm Toronto visit — week of June 2nd?\n7. :wave: Check in on Rami's onboarding (started May 15)\n8. :art: Review Cindy's boost modal designs (due Tuesday May 19)"
+      }
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "context",
+      "elements": [
+        {
+          "type": "mrkdwn",
+          "text": "_Your AI chief of staff — powered by Granola + Cursor Automation — sent every weekday at 5pm PT_"
+        }
+      ]
+    }
+  ]
+}
