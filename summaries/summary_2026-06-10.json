@@ -1,0 +1,134 @@
+{
+  "date": "Wednesday, June 10, 2026",
+  "blocks": [
+    {
+      "type": "header",
+      "text": {
+        "type": "plain_text",
+        "text": "\ud83c\udf1f Your Daily Decision Summary \u2014 Wednesday, June 10, 2026",
+        "emoji": true
+      }
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "Hey Manan! You absolutely *crushed it* today \u2014 three back-to-back meetings and you came out of each one with crystal-clear direction. Here's everything you decided, why you decided it, and what needs to happen next. Let's go! \ud83d\ude80"
+      }
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*\ud83d\udcc5 Meeting 1: Applicant Flow Q3 Roadmap Review (Design)*\n_\ud83d\udd50 11:30 AM PDT_\n\ud83d\udc65 Cindy Lemus, Fadi Rizk"
+      }
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*\u2705 Decisions Made:*\n\u2022 Q3 North Star locked in: 80% of ICP jobs healthy by Day 30 (current: ~30%, realistic stretch: ~38%)\n\u2022 Three strategic pillars confirmed: (1) Enable OEM Spend, (2) Tap the Talent Pool, (3) Optimize the Funnel\n\u2022 Roadmap front-loaded with low/no-design work in early Q3 \u2014 design ramps in back half (intentional, gives Fadi room to breathe and engineering time to ship OEM work)\n\u2022 Homebase Boost launch metrics reviewed: 120 modal views, 15 'Apply Boost' clicks (~12.5%) in first week \u2014 zero clicks on Zip Recruiter. $50 vs $199 anchoring is working beautifully\n\u2022 Agreed design collaboration model: dedicated sprint blocks (up to 4 hours), Fadi as primary design lead, Cindy as thought partner/reviewer, Manan owns all written briefs/output\n\u2022 Poached experiment scoped: manually post line cook jobs nightly, pipe applicants back to native Homebase job page \u2014 pure out-of-product learning\n\u2022 Facebook job taxonomy upgrade: move from L2 (generic category) to specific role type (e.g. 'line cook' vs 'restaurant role') for better image matching and organic ranking\n\u2022 HTML job page conversion: convert JS pages to HTML/CSS so Google, ChatGPT, and Claude can crawl and index them\n\u2022 Decided NOT to pursue: net-new candidate acquisition, building job supply, outreach to active Homebase employees (OEM backlash risk)"
+      }
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*\ud83c\udfaf Action Items (all yours):*\n\u2611\ufe0f Book time with Fadi this week to t-shirt size design effort across full Q3 roadmap\n\u2611\ufe0f Review Sprint 2613 items with Fadi: dollar-for-dollar modal + sponsored jobs API tweaks on Cindy's existing designs\n\u2611\ufe0f Post line cook jobs on Poached nightly (manual experiment) and pipe applicants back\n\u2611\ufe0f Follow up with Carrie on search relevancy + job indexing work already in flight\n\u2611\ufe0f Wait for Rami's talent pool ICP overlap sizing (~1-2 weeks) before finalizing pool targeting"
+      }
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*\ud83d\udca1 Why This Matters:*\nBoosted jobs are *nearly 2x as likely to reach healthy status* (48% vs 26%), yet only 1.5% of Q2 jobs were boosted. Front-loading OEM spend work is the highest-conviction lever. The design front-loading protects Fadi's bandwidth while simultaneously buying Matan/Rami time to iterate on the talent pool data science model without engineering pressure."
+      }
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*\ud83d\udcc5 Meeting 2: Talent Pool Outreach Automation \u2014 Iterable Setup*\n_\ud83d\udd50 1:02 PM PDT_\n\ud83d\udc65 Rami (Data Science)"
+      }
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*\u2705 Decisions Made:*\n\u2022 Selected Iterable as the email platform for talent pool A/B experiments (already in Okta, requestable)\n\u2022 Experiment design locked: Group A = generic Homebase email, Group B = recruiter-branded email from Manan. One campaign, control vs. variant, audience list fed per run\n\u2022 All job-specific info encoded as CSV fields so the email template stays generic \u2014 clean, scalable architecture\n\u2022 Infrastructure path chosen: move normalization script to Databricks (schedulable), save CSV to S3, push to Iterable via script\n\u2022 Sequencing update: generic + recruiter email launches NEXT sprint. Other talent pool components pushed back one sprint to give data science more runway\n\u2022 Roadmap finalization meeting on Friday to be replaced by a Manan + Ted + DS Q3 walkthrough\n\u2022 Hackathon context: Ted and Kenshin asked both senior data scientists to lock in on 1-2 solid workstreams \u2014 early signs are strong (demos requested after 1.5 days)"
+      }
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*\ud83c\udfaf Action Items (all yours):*\n\u2611\ufe0f Tap someone on the marketing team to figure out how to push audience data into Iterable\n\u2611\ufe0f Request Iterable MCP access\n\u2611\ufe0f Replace Friday roadmap finalization meeting with Manan + Ted + DS walkthrough of Q3 roadmap\n\u2611\ufe0f Reconvene with Rami after hackathon to wire up full pipeline and start running experiments"
+      }
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*\ud83d\udca1 Why This Matters:*\nIterable gives you open rates and click-throughs out of the box \u2014 critical for validating which email approach resonates with the talent pool. Moving the script to Databricks eliminates the manual 'run locally \u2192 YAMM' pain and makes the experiment repeatable and automated. The one-sprint delay on other talent pool work is actually a gift: it lets data science produce quality output without being rushed."
+      }
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*\ud83d\udcc5 Meeting 3: Manan / Matan Catch-Up*\n_\ud83d\udd50 1:15 PM PDT_\n\ud83d\udc65 Matan"
+      }
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*\u2705 Decisions Made:*\n\u2022 Overall Q3 strategy endorsed by Matan \u2014 storyline is strong, just needs scope tightening\n\u2022 Roadmap acknowledged as very ambitious; next step is to t-shirt size everything with design + eng before reprioritizing\n\u2022 Sales team boost messaging strategy defined: frame it as 'we make sure you get applicants, sometimes that means boosting' \u2014 NOT 'go boost on Indeed (i.e., pay more money)'. Completely different customer psychology\n\u2022 Screener messaging experiments green-lit to start now; AI disclosure flagged by Caitlin (risk team) \u2014 new AI laws/regulations in play, messaging must comply\n\u2022 Job Seeker Agent concept validated: proactive outreach \u2192 capture employment timeline/motivations \u2192 match and re-engage at the right moment. This is the long-term moat\n\u2022 Pricing experiments for Homebase Boost validated: $50 is a solid first swing, but $25 and $70 remain untested\n\u2022 Collaboration model with Matan and Rami confirmed: Matan handles messaging/positioning, Rami handles model iteration, Manan coordinates and runs the experiments"
+      }
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*\ud83c\udfaf Action Items (all yours):*\n\u2611\ufe0f T-shirt size ALL roadmap experiments with design + engineering, then reprioritize (this is blocker for everything)\n\u2611\ufe0f Align with Usman on boost messaging framing for the sales team \u2014 high leverage, low effort\n\u2611\ufe0f Coordinate with Matan + Rami on talent pool outreach experiments: model iteration, experiment setup, messaging strategy\n\u2611\ufe0f Check AI disclosure requirements with Caitlin before finalizing screener messaging experiments"
+      }
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*\ud83d\udca1 Why This Matters:*\nThe boost messaging reframe is *critical*: sales reps who position it as a service ('we get you applicants') will close at dramatically higher rates than those positioning it as a cost ('go pay more'). This is a zero-cost, immediate-impact lever. T-shirt sizing with eng/design before committing to the full roadmap is the right call \u2014 Matan flagged the volume as very ambitious, and shipping fewer things well beats shipping many things poorly."
+      }
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*\ud83d\udccb Master Action List for Tomorrow:*\n1. Book time with Fadi this week to t-shirt size design effort across full Q3 roadmap\n2. Review Sprint 2613 items with Fadi: dollar-for-dollar modal + sponsored jobs API tweaks on Cindy's existing designs\n3. Post line cook jobs on Poached nightly (manual experiment) and pipe applicants back\n4. Follow up with Carrie on search relevancy + job indexing work already in flight\n5. Wait for Rami's talent pool ICP overlap sizing (~1-2 weeks) before finalizing pool targeting\n6. Tap someone on the marketing team to figure out how to push audience data into Iterable\n7. Request Iterable MCP access\n8. Replace Friday roadmap finalization meeting with Manan + Ted + DS walkthrough of Q3 roadmap\n9. Reconvene with Rami after hackathon to wire up full pipeline and start running experiments\n10. T-shirt size ALL roadmap experiments with design + engineering, then reprioritize (this is blocker for everything)\n11. Align with Usman on boost messaging framing for the sales team \u2014 high leverage, low effort\n12. Coordinate with Matan + Rami on talent pool outreach experiments: model iteration, experiment setup, messaging strategy\n13. Check AI disclosure requirements with Caitlin before finalizing screener messaging experiments"
+      }
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*\ud83d\udd25 Bottom Line:* You've got a clear Q3 strategy, a sequenced roadmap, and a team that's aligned. The OEM spend work buys you breathing room to run the talent pool experiments properly. You're not just moving fast \u2014 you're moving *smart*. Proud of the clarity you drove today. Go rest up, you've earned it! \ud83d\udcaa"
+      }
+    }
+  ],
+  "fallback": "Daily Decision Summary for Wednesday, June 10, 2026 \u2014 13 action items identified across 3 meetings."
+}
