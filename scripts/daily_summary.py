@@ -1,0 +1,206 @@
+#!/usr/bin/env python3
+"""
+Daily Decision Summary - Chief of Staff Automation
+Fetches Granola meetings for the current day and posts a formatted
+summary to a Slack channel.
+
+Required environment variables:
+  SLACK_BOT_TOKEN  - Slack bot OAuth token (xoxb-...)
+  SLACK_CHANNEL_ID - Target Slack channel/DM ID (default: D06E4QMHCNN)
+
+Optional:
+  GRANOLA_API_KEY  - Granola API key (if using direct API instead of MCP)
+"""
+
+import os
+import sys
+import json
+import argparse
+from datetime import datetime, timezone, timedelta
+from slack_sdk import WebClient
+from slack_sdk.errors import SlackApiError
+
+
+SLACK_CHANNEL_ID = os.environ.get("SLACK_CHANNEL_ID", "D06E4QMHCNN")
+SLACK_BOT_TOKEN = os.environ.get("SLACK_BOT_TOKEN")
+
+
+def post_to_slack(message_blocks: list, fallback_text: str) -> bool:
+    if not SLACK_BOT_TOKEN:
+        print("[ERROR] SLACK_BOT_TOKEN environment variable is not set.")
+        print("Add it via Cursor Dashboard > Cloud Agents > Secrets")
+        print("\n--- WOULD HAVE POSTED ---")
+        print(fallback_text)
+        print("--- END ---")
+        return False
+
+    client = WebClient(token=SLACK_BOT_TOKEN)
+    try:
+        response = client.chat_postMessage(
+            channel=SLACK_CHANNEL_ID,
+            blocks=message_blocks,
+            text=fallback_text,
+            unfurl_links=False,
+            unfurl_media=False,
+        )
+        print(f"[OK] Message posted to {SLACK_CHANNEL_ID} (ts={response['ts']})")
+        return True
+    except SlackApiError as e:
+        print(f"[ERROR] Slack API error: {e.response['error']}")
+        return False
+
+
+def build_slack_message(date_str: str, meetings_data: list) -> tuple[list, str]:
+    """Build Slack Block Kit message from meeting data."""
+
+    header_text = f"*Your Daily Decision Wrap-Up — {date_str}* 🌅"
+
+    blocks = [
+        {
+            "type": "header",
+            "text": {
+                "type": "plain_text",
+                "text": f"📋 Daily Decision Wrap-Up — {date_str}",
+                "emoji": True,
+            },
+        },
+        {"type": "divider"},
+    ]
+
+    fallback_lines = [f"📋 Daily Decision Wrap-Up — {date_str}\n"]
+
+    if not meetings_data:
+        blocks.append(
+            {
+                "type": "section",
+                "text": {
+                    "type": "mrkdwn",
+                    "text": "No meetings recorded today. Enjoy the quiet! 🧘",
+                },
+            }
+        )
+        fallback_lines.append("No meetings recorded today.")
+        return blocks, "\n".join(fallback_lines)
+
+    total_meetings = len(meetings_data)
+    blocks.append(
+        {
+            "type": "section",
+            "text": {
+                "type": "mrkdwn",
+                "text": f"You crushed *{total_meetings} meeting{'s' if total_meetings != 1 else ''}* today. Here's everything that matters 👇",
+            },
+        }
+    )
+    blocks.append({"type": "divider"})
+
+    for i, meeting in enumerate(meetings_data, 1):
+        title = meeting.get("title", "Untitled Meeting")
+        time = meeting.get("time", "")
+        decisions = meeting.get("decisions", [])
+        action_items = meeting.get("action_items", [])
+        rationale = meeting.get("rationale", "")
+
+        meeting_header = f"*{i}. {title}*"
+        if time:
+            meeting_header += f"  ·  _{time}_"
+
+        blocks.append(
+            {
+                "type": "section",
+                "text": {"type": "mrkdwn", "text": meeting_header},
+            }
+        )
+
+        fallback_lines.append(f"\n{i}. {title} {time}")
+
+        if decisions:
+            decision_text = "*Decisions Made:*\n" + "\n".join(
+                f"• {d}" for d in decisions
+            )
+            blocks.append(
+                {
+                    "type": "section",
+                    "text": {"type": "mrkdwn", "text": decision_text},
+                }
+            )
+            fallback_lines.append("Decisions: " + "; ".join(decisions))
+
+        if rationale:
+            blocks.append(
+                {
+                    "type": "section",
+                    "text": {
+                        "type": "mrkdwn",
+                        "text": f"_💡 Why:_ {rationale}",
+                    },
+                }
+            )
+
+        if action_items:
+            action_text = "*Your Action Items:*\n" + "\n".join(
+                f"☐ {a}" for a in action_items
+            )
+            blocks.append(
+                {
+                    "type": "section",
+                    "text": {"type": "mrkdwn", "text": action_text},
+                }
+            )
+            fallback_lines.append("Actions: " + "; ".join(action_items))
+
+        if i < total_meetings:
+            blocks.append({"type": "divider"})
+
+    # Footer
+    blocks.append({"type": "divider"})
+    blocks.append(
+        {
+            "type": "context",
+            "elements": [
+                {
+                    "type": "mrkdwn",
+                    "text": "🤖 Generated by your Chief of Staff automation · Powered by Granola + Cursor",
+                }
+            ],
+        }
+    )
+
+    return blocks, "\n".join(fallback_lines)
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Post daily decision summary to Slack")
+    parser.add_argument(
+        "--data",
+        type=str,
+        help="Path to JSON file containing pre-fetched meeting data",
+    )
+    parser.add_argument(
+        "--date",
+        type=str,
+        default=None,
+        help="Date string to display (default: today)",
+    )
+    args = parser.parse_args()
+
+    if args.date:
+        date_str = args.date
+    else:
+        pdt = timezone(timedelta(hours=-7))
+        date_str = datetime.now(pdt).strftime("%A, %B %-d, %Y")
+
+    if args.data:
+        with open(args.data) as f:
+            meetings_data = json.load(f)
+    else:
+        print("[INFO] No --data file provided. Use --data meetings.json to pass meeting summaries.")
+        meetings_data = []
+
+    blocks, fallback = build_slack_message(date_str, meetings_data)
+    success = post_to_slack(blocks, fallback)
+    sys.exit(0 if success else 1)
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,74 @@
+[
+  {
+    "title": "Usman / Manan — Sales Support",
+    "time": "9:30 AM PDT",
+    "decisions": [
+      "Salesforce needs per-job applicant/screener/top-match data (V2 jobs only) — not just account-level rollups",
+      "Build a report to surface unhealthy trials so reps can proactively reach out at Day 5",
+      "Scope: ~140 unhealthy ICP businesses/week to target"
+    ],
+    "action_items": [
+      "Write a brief covering Salesforce data requirements and share with Usman and Jatin",
+      "Sync early next week with Usman, Jatin, and Rich to align on engineering deliverables by end of next sprint"
+    ],
+    "rationale": "Reps currently can't identify which trial accounts need intervention at the right time. Per-job data in Salesforce unlocks an unhealthy-trial outreach cadence that could meaningfully improve trial-to-paid conversion."
+  },
+  {
+    "title": "Hiring: Team Check-in",
+    "time": "10:00 AM PDT",
+    "decisions": [
+      "Q3 north star confirmed: 80% of ICP jobs healthy by Day 30 (up from ~30% today)",
+      "Three pillars: enable OEM spend (boosting), tap the 20M talent pool, optimize job board funnel",
+      "V1 migration closed — OEMs can no longer create V1 jobs; 77 users converted to V2",
+      "Rescue Job hackathon project to be mapped into the boosting flow and LCM motion",
+      "Indeed browser agent POC to move forward — get Zane a paid Indeed employer account to finish the boost step",
+      "Explore headless browser services (e.g. Anon) for production agent; Ray to set up a call next week"
+    ],
+    "action_items": [
+      "Find time with Zane to map Rescue Job into the boosting flow and LCM motion",
+      "Share full deck and Librarian link in the hiring team channel",
+      "Get Zane a paid Indeed employer account to complete the browser agent POC"
+    ],
+    "rationale": "D30 job health is rising and unhealthy % is declining — the interventions are working. Locking in the Q3 north star and sequencing gives the team a clear rallying point. The Rescue Job and Indeed agent hackathon wins can be productized quickly with minimal overhead."
+  },
+  {
+    "title": "Izzy / Manan — Indeed Agent & Job Rescue Deep-Dive",
+    "time": "10:48 AM PDT",
+    "decisions": [
+      "Indeed sponsored jobs require the OEM to have a credit card on file — Homebase can't use its own card",
+      "Custom budget + 1-week end date is the preferred boosting config (doubles daily spend vs. 2-week spread)",
+      "Production agent architecture is a spike for next sprint — must resolve latency, concurrency, HB1 comms, Rails vs. Python, and security",
+      "Job Rescue entry points: unhealthy jobs at Day 5/10 AND free-plan OEMs at job creation — both viable",
+      "Get a Homebase credit card approved for running independent experiments"
+    ],
+    "action_items": [
+      "Investigate credit card prerequisite flow using Indeed account setup endpoint",
+      "Update sponsored job prompt: add custom budget instructions + 1-week end date logic",
+      "Spike on production agent architecture (latency, concurrency, HB1 comms, Rails vs. Python, security)",
+      "Get Homebase credit card approved for running agent experiments independently"
+    ],
+    "rationale": "The POC works but production-readiness has real unknowns. Front-loading the spike means the team can design the right architecture before building — avoiding costly rewrites. The 1-week custom budget doubles the performance signal, giving better data per dollar spent."
+  },
+  {
+    "title": "Q3 Applicant Flow Strategy — Data Science Sync",
+    "time": "11:30 AM PDT",
+    "decisions": [
+      "OEM spend (boosting) front-loaded to Sprint 1 — frees engineering to productionize talent pool work later",
+      "Talent pool experiments run concurrently by Manan + Rami with no engineering dependency (except email vs. push)",
+      "Databricks → Iterable pipeline confirmed via API key; morning cron job pushes applicant lists directly",
+      "Iterable handles control/variant split automatically (control = generic Homebase email)",
+      "Experiments Manan + Rami can run independently: distance, role type, single vs. multi-job, OEM sender",
+      "New designer joins early July — design-heavy work shifts accordingly",
+      "Salary recommendations added as a roadmap line item; Antoine's wage calculator tool is reusable"
+    ],
+    "action_items": [
+      "Clean up roadmap: add sprint dates on top of sprint numbers, surface talent pool experimentation timeline, add salary recommendations as a line item",
+      "Share finalized roadmap with Ted so he can flag Rami conflicts with Cashout model deployment",
+      "Set up weekly Tuesday or Wednesday sync: Manan, Ted, Rami (+ designer when onboarded)",
+      "Set up biweekly Friday afternoon brainstorm: Manan and Rami — dedicated to open-ended hiring DS opportunities",
+      "Share Antoine's hackathon handoff file with the team",
+      "Rami to finish outreach script by Monday or early Tuesday; ping Manan for 15-min sync if needed"
+    ],
+    "rationale": "Front-loading OEM spend unblocks the engineering team for talent pool productionization later in the quarter. Running talent pool experiments in parallel — without engineering — maximizes throughput. The 0.1% engagement target on the 20M talent pool translates to ~40% volume increase, making it the highest-leverage unlabored initiative this quarter."
+  }
+]
