@@ -1,0 +1,40 @@
+name: Daily Decision Summary
+
+on:
+  # Runs at midnight UTC = 5pm PT (PDT) / 4pm PT (PST)
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+    inputs:
+      date:
+        description: 'Date to summarize (YYYY-MM-DD, defaults to today)'
+        required: false
+
+jobs:
+  summarize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Post today's summary to Slack
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+        run: |
+          DATE="${{ github.event.inputs.date || '' }}"
+          if [ -z "$DATE" ]; then
+            # Use Pacific time (UTC-7 for PDT)
+            DATE=$(TZ="America/Los_Angeles" date +%Y-%m-%d)
+          fi
+          SUMMARY_FILE="daily_summaries/${DATE}.md"
+          if [ -f "$SUMMARY_FILE" ]; then
+            echo "Posting $SUMMARY_FILE to Slack..."
+            python3 daily_summary.py --file "$SUMMARY_FILE"
+          else
+            echo "No summary file found for $DATE at $SUMMARY_FILE"
+            exit 1
+          fi
